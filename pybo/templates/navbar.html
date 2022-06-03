@@ -1,0 +1,97 @@
+<!-- 네비게이션바 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">제안 게시판</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {% if g.user %}
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ url_for('auth.logout') }}">{{ g.user.username }} (로그아웃)</a>
+                </li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('auth.signup') }}">계정생성</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('auth.login') }}">로그인</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+<!--  <main>-->
+<!--    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Ninth navbar example">-->
+<!--      <div class="container-xl">-->
+<!--        <a class="navbar-brand" href="#"><img src="brand/brand_logo_57x38.png"></a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL"-->
+<!--          aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--          <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarsExample07XL">-->
+<!--          <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--            &lt;!&ndash; <li class="nav-item">-->
+<!--            <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--          </li> &ndash;&gt;-->
+<!--            <li class="nav-item"><a class="nav-link" href="#">HEYROO</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#">YOUUS</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#">7-Select</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#">Min1st</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#">지도</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link" href="#">제안게시판</a></li>-->
+<!--            <li class="nav-item dropdown">-->
+<!--              <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown"-->
+<!--                aria-expanded="false">고객지원</a>-->
+<!--              <ul class="dropdown-menu" aria-labelledby="dropdown07XL">-->
+<!--                <li><a class="dropdown-item" href="#">공지사항</a></li>-->
+<!--                <li><a class="dropdown-item" href="#">자주묻는질문</a></li>-->
+<!--                <li><a class="dropdown-item" href="#">Q&A</a></li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--          <div class="text-end">-->
+<!--            <button type="button" class="btn btn-warning">Login</button>-->
+<!--            <button type="button" class="btn btn-warning">Sign-up</button>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; <form>-->
+<!--            <input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
+<!--          </form> &ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+<!--    <hr class="nav_hr">-->
+<!--    <div class="container visual_area">-->
+<!--      <div>Hello, pBee</div>-->
+<!--      <div class="visual_area_logo"><img src="brand/brand_logo_500x230.png"></div>-->
+<!--    </div>-->
+
+<!--    <div class="container-xl">-->
+<!--      <section class="vertical">-->
+<!--        <div>-->
+<!--          <img src="event/event_1.jpg">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <img src="event/event_2.jpg">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <img src="event/event_3.jpg">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <img src="event/event_4.jpg">-->
+<!--        </div>-->
+<!--      </section>-->
+<!--    </div>-->
+<!--  </main>-->

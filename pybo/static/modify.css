@@ -1,0 +1,38 @@
+@font-face {
+    font-family: jalnan;
+    src: url("../font/Jalnan.ttf");
+}
+
+:root {
+    --main--color: #ffc107;
+    --sub--color: #ffca2c;
+    --sub1--color: #292109;
+}
+
+.visual_area{
+    display: flex;
+    width: 100%;
+    font-family: jalnan;
+    font-size: 105px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    /* padding-left: 30px; */
+}
+.visual_area_logo{
+    margin-right: 20px;
+}
+.visual_area_logo > img{
+    width: 370px;
+}
+
+@media (max-width:1090px) {
+    .visual_area{
+        font-size: 9vw;
+    }
+    .visual_area_logo > img{
+        width: 34vw;
+    }
+    .visual_area_logo{
+        margin-right: 1.8vw;
+    }
+}
